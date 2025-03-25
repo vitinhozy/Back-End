@@ -15,6 +15,7 @@
         <nav>
             <a href="index.php?menu=home">Home</a>
             <a href="index.php?menu=lista">Lista</a>
+            <a href="index.php?menu=adicionarCarro">Adicionar Carro</a>
         </nav>
     </header>
 
@@ -35,6 +36,14 @@
                 case 'lista':
                     include('pages/listaCarros/listarCarros.php');
                     break;
+                case 'adicionarCarro':
+                    include('pages/listaCarros/adicionarCarro.php');
+                    break;
+
+                case 'dbAdicionarCarro':
+                    include('pages/listaCarros/dbAdicionarCarro.php');
+                    break;
+                
             }
         ?>
     </main>
