@@ -1,22 +1,22 @@
 <?php
-include('db/conexao.php');
+    include('db/conexao.php');
 
-$id = $_GET['id'];
-$query = "SELECT * FROM livros WHERE id = $id";
-$result = mysqli_query($conexao, $query);
-$livro = mysqli_fetch_assoc($result);
+    $id = $_GET['id'];
+    $query = "SELECT * FROM livros WHERE id = $id";
+    $result = mysqli_query($conexao, $query);
+    $livro = mysqli_fetch_assoc($result);
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nome = $_POST['nome'];
-    $imagem = $_POST['imagem'];
-    $descricao = $_POST['descricao'];
-    $avaliacao = $_POST['avaliacao'];
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $nome = $_POST['nome'];
+        $imagem = $_POST['imagem'];
+        $descricao = $_POST['descricao'];
+        $avaliacao = $_POST['avaliacao'];
 
-    $query = "UPDATE livros SET nome='$nome', imagem='$imagem', descricao='$descricao', avaliacao='$avaliacao' WHERE id=$id";
-    mysqli_query($conexao, $query);
+        $query = "UPDATE livros SET nome='$nome', imagem='$imagem', descricao='$descricao', avaliacao='$avaliacao' WHERE id=$id";
+        mysqli_query($conexao, $query);
 
-    header("Location: index.php?menu=home");
-}
+        header("Location: index.php?menu=home");
+    }
 ?>
 
 <form method="POST">

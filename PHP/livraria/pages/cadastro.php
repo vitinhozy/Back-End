@@ -1,11 +1,11 @@
 <?php
-include('db/conexao.php');
+    include('db/conexao.php');
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nome = $_POST['nome'];
-    $imagem = $_POST['imagem'];
-    $descricao = $_POST['descricao'];
-    $avaliacao = $_POST['avaliacao'];
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $nome = $_POST['nome'];
+        $imagem = $_POST['imagem'];
+        $descricao = $_POST['descricao'];
+        $avaliacao = $_POST['avaliacao'];
 
     $query = "INSERT INTO livros (nome, imagem, descricao, avaliacao) VALUES ('$nome', '$imagem', '$descricao', '$avaliacao')";
     mysqli_query($conexao, $query);

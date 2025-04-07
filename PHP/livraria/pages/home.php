@@ -1,15 +1,15 @@
 <?php
-include('db/conexao.php');
+    include('db/conexao.php');
 
-if (!isset($conexao)) {
-    die("Erro: Conexão não encontrada.");
-}
+    if (!isset($conexao)) {
+        die("Erro: Conexão não encontrada.");
+    }
 
-$query = "SELECT * FROM livros";
-$result = mysqli_query($conexao, $query);
+    $query = "SELECT * FROM livros";
+    $result = mysqli_query($conexao, $query);
 
-if (!$result) {
-    die("Erro ao buscar livros: " . mysqli_error($conexao));
+    if (!$result) {
+        die("Erro ao buscar livros: " . mysqli_error($conexao));
 }
 ?>
 

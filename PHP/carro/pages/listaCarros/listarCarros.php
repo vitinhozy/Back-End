@@ -28,6 +28,7 @@
                 <td><?= $dados['valorCarro']?></td>
                 <td><?= $dados['anoCarro']?></td>
                 <td><?= $dados['corCarro']?></td>
+                <td><a href="index.php?menu=editarCarro&idCarros=<?=$dados['idCarros']?>">EDITAR</a></td>
             </tr>
 
         <?php
