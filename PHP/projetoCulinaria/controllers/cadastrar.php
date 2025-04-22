@@ -16,11 +16,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $imagem = $imagem_nome;
     }
 
-    $sql = "INSERT INTO receitas (titulo, descricao, receitaTexto, autor, tipo, imagem) 
-            VALUES (?, ?, ?, ?, ?, ?)";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([$titulo, $descricao, $receitaTexto, $autor, $tipo, $imagem]);
+    // preparando e executando com mysqli
+    $stmt = mysqli_prepare($conexao, "INSERT INTO receitas (titulo, descricao, receitaTexto, autor, tipo, imagem) VALUES (?, ?, ?, ?, ?, ?)");
+    mysqli_stmt_bind_param($stmt, "ssssss", $titulo, $descricao, $receitaTexto, $autor, $tipo, $imagem);
+    mysqli_stmt_execute($stmt);
 
+    // redireciona após o cadastro
     header("Location: ../pages/listar_receita.php");
+    exit;
 }
 ?>

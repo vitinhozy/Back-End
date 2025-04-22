@@ -34,9 +34,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="pages/cadastro_receita.php">CADASTRAR RECEITA</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="pages/cadastro_receita.php">LISTA DE RECEITAS</a>
-                        </li>
+
                     </ul>
                 </div>
             </div>
